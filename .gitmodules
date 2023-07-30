@@ -1,0 +1,6 @@
+[submodule "innoscripta-news-backend"]
+	path = innoscripta-news-backend
+	url = https://github.com/dystopian228/innoscripta-news-backend.git
+[submodule "innoscripta-news-frontend"]
+	path = innoscripta-news-frontend
+	url = https://github.com/dystopian228/innoscripta-news-frontend.git
