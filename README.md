@@ -50,3 +50,7 @@ The frontend is exposed on port 3000:
 While the backend API is on port 8080:
 
 `http://localhost:8080`
+
+### Cronjob issue
+
+The cornjob runs every 5 minutes to scrap for new articles/data. Unfortunately, this implies that the articles won't be fetched until the first 5 minutes since the containers have been started. A workaround is to update the interval for the job in /app/Console/Kernel.php to a lesser value to decrease the wait time.
