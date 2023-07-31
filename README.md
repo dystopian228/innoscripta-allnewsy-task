@@ -1,6 +1,6 @@
 # AllNewsy News Aggregator
 
- ![Watch the video](https://i.ytimg.com/vi/BNflNL40T_M/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCdqjE42x_2rjSEe7BlGJycSffalw)
+[![Watch the video](https://i.ytimg.com/vi/BNflNL40T_M/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCdqjE42x_2rjSEe7BlGJycSffalw)](https://www.youtube.com/watch?v=BNflNL40T_M)
 
 ## Background
 
