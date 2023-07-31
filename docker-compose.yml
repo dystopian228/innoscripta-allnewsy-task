@@ -1,7 +1,6 @@
 version: "3"
 
 services:
-  # Laravel backend
   innoscripta_allnewsy_api:
     build:
       context: ./innoscripta-news-backend
@@ -12,12 +11,23 @@ services:
     volumes:
       - ./innoscripta-news-backend:/var/www/html
     environment:
+      APP_NAME: AllNewsy
+      APP_ENV: production
+      APP_DEBUG: 'true'
+      PORT: 8080
       DB_CONNECTION: mysql
-      DB_HOST: allnewsy-mysql-db
+      DB_HOST: allnewsy_mysql_db
       DB_PORT: 3306
       DB_DATABASE: innoscripta-allnewsy
       DB_USERNAME: innoscripta_user
-      DB_PASSWORD: secret
+      DB_PASSWORD: changeme
+      NEWS_API_BASE_URL: "https://newsapi.org/v2"
+      NEWS_API_API_KEY: e4aefd4f085645f595bd58170d57d538
+      THE_GUARDIAN_BASE_URL: "https://content.guardianapis.com"
+      THE_GUARDIAN_API_KEY: 799a2c8e-2b6d-40aa-98c7-8a4cd997c777
+      NYTIMES_BASE_URL: "https://api.nytimes.com/svc/search/v2"
+      NYTIMES_API_KEY: LynuxtLoUx6QKD4fZLY6bW9rMGYvxyZ2
+      
     depends_on:
       - allnewsy_mysql_db
     ports:
@@ -26,7 +36,6 @@ services:
       - allnewsy-network
     entrypoint: ['sh', '/var/www/html/docker/entrypoint.sh']
 
-  # MySQL database
   allnewsy_mysql_db:
     image: mysql:8.0
     container_name: allnewsy-mysql-db
@@ -34,8 +43,8 @@ services:
     environment:
       MYSQL_DATABASE: innoscripta-allnewsy
       MYSQL_USER: innoscripta_user
-      MYSQL_PASSWORD: secret
-      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_PASSWORD: changeme
+      MYSQL_ROOT_PASSWORD: changeme
     volumes:
       - ./mysql-data:/var/lib/mysql
     ports:
@@ -43,7 +52,6 @@ services:
     networks:
       - allnewsy-network
 
-  # React frontend
   innoscripta-allnewsy-frontend:
     build:
       context: ./innoscripta-news-frontend
